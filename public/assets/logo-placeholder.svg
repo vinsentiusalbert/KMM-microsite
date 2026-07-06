@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120" role="img" aria-labelledby="title">
+  <title id="title">Logo placeholder</title>
+  <rect width="360" height="120" rx="18" fill="#ffffff"/>
+  <rect x="10" y="10" width="340" height="100" rx="14" fill="#fff7ef" stroke="#e33724" stroke-width="3"/>
+  <text x="180" y="54" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="800" fill="#101014">LOGO</text>
+  <text x="180" y="84" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#4f4bc4">taruh file logo di sini</text>
+</svg>
