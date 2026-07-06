@@ -6,8 +6,12 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/ngomonginduit');
 });
+
+Route::get('/ngomonginduit', function () {
+    return view('welcome');
+})->name('ngomonginduit');
 
 Route::post('/register', function (Request $request) {
     $validated = $request->validate(
