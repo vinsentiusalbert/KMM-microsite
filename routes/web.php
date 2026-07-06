@@ -65,7 +65,7 @@ Route::post('/kmm-admin/login', function (Request $request) {
     return redirect()->route('kmm-admin.index');
 })->name('kmm-admin.login.submit');
 
-Route::post('/kmm-admin/logout', function (Request $request) {
+Route::match(['get', 'post'], '/kmm-admin/logout', function (Request $request) {
     $request->session()->forget('kmm_admin_authenticated');
     $request->session()->regenerateToken();
 

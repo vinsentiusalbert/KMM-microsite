@@ -92,12 +92,12 @@
         <div class="topbar">
             <div>
                 <h1>Data Pendaftaran</h1>
-                <p class="empty-note">Total data: {{ $registrations->count() }}</p>
+                <p class="empty-note">Total data: <?php echo e($registrations->count()); ?></p>
             </div>
 
             <div class="actions">
-                <a class="button export" href="{{ route('kmm-admin.export') }}">Export Excel</a>
-                <a class="button" href="{{ route('kmm-admin.logout') }}">Logout</a>
+                <a class="button export" href="<?php echo e(route('kmm-admin.export')); ?>">Export Excel</a>
+                <a class="button" href="<?php echo e(route('kmm-admin.logout')); ?>">Logout</a>
             </div>
         </div>
 
@@ -113,15 +113,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($registrations as $registration)
+                    <?php $__currentLoopData = $registrations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $registration): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
-                            <td>{{ $registration->name }}</td>
-                            <td>{{ $registration->email }}</td>
-                            <td>{{ $registration->whatsapp }}</td>
-                            <td>{{ optional($registration->created_at)->format('d/m/Y H:i') }}</td>
+                            <td><?php echo e($loop->iteration); ?></td>
+                            <td><?php echo e($registration->name); ?></td>
+                            <td><?php echo e($registration->email); ?></td>
+                            <td><?php echo e($registration->whatsapp); ?></td>
+                            <td><?php echo e(optional($registration->created_at)->format('d/m/Y H:i')); ?></td>
                         </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
         </section>
@@ -152,3 +152,4 @@
     </script>
 </body>
 </html>
+<?php /**PATH D:\1 Kerja\KMM microsite\resources\views/kmm-admin/index.blade.php ENDPATH**/ ?>
