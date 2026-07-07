@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Microsite pendaftaran Ngomongin Duit Bareng Tante Diany">
     <title>Ngomongin Duit Bareng Tante Diany</title>
-    <link rel="icon" type="image/jpeg" href="{{ asset('img/logo.JPG') }}">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo.JPG') }}">
+    <link rel="icon" type="image/jpeg" href="<?php echo e(asset('img/logo.JPG')); ?>">
+    <link rel="apple-touch-icon" href="<?php echo e(asset('img/logo.JPG')); ?>">
     <style>
         :root {
             --ink: #101014;
@@ -399,12 +399,12 @@
 <body>
     <main class="page">
         <header id="top" class="site-header" aria-label="Logo">
-            <img class="logo" src="{{ asset('img/logo.JPG') }}" alt="Logo Fire Bro">
+            <img class="logo" src="<?php echo e(asset('img/logo.JPG')); ?>" alt="Logo Fire Bro">
         </header>
 
         <section class="content">
             <div class="banner-wrap">
-                <img class="banner" src="{{ asset('img/banner.png') }}" alt="Banner Fire Bro">
+                <img class="banner" src="<?php echo e(asset('img/banner.png')); ?>" alt="Banner Fire Bro">
             </div>
 
             <div class="copy">
@@ -440,31 +440,52 @@
             <aside id="registration-form" class="form-panel" aria-label="Form pendaftaran">
                 <h3>Daftarkan diri anda disini</h3>
 
-                <form method="POST" action="{{ route('registrations.store') }}" novalidate>
-                    @csrf
+                <form method="POST" action="<?php echo e(route('registrations.store')); ?>" novalidate>
+                    <?php echo csrf_field(); ?>
 
                     <div class="field">
                         <label for="name">Nama:</label>
-                        <input id="name" name="name" type="text" value="{{ old('name') }}" autocomplete="name" placeholder="Masukkan nama lengkap" required>
-                        @error('name')
-                            <div class="error">{{ $message }}</div>
-                        @enderror
+                        <input id="name" name="name" type="text" value="<?php echo e(old('name')); ?>" autocomplete="name" placeholder="Masukkan nama lengkap" required>
+                        <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="error"><?php echo e($message); ?></div>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="field">
                         <label for="email">Email:</label>
-                        <input id="email" name="email" type="email" value="{{ old('email') }}" autocomplete="email" placeholder="contoh@email.com" required>
-                        @error('email')
-                            <div class="error">{{ $message }}</div>
-                        @enderror
+                        <input id="email" name="email" type="email" value="<?php echo e(old('email')); ?>" autocomplete="email" placeholder="contoh@email.com" required>
+                        <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="error"><?php echo e($message); ?></div>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <div class="field">
                         <label for="whatsapp">Whatsapp:</label>
-                        <input id="whatsapp" name="whatsapp" type="tel" value="{{ old('whatsapp') }}" autocomplete="tel" placeholder="08xxxxxxxxxx" required>
-                        @error('whatsapp')
-                            <div class="error">{{ $message }}</div>
-                        @enderror
+                        <input id="whatsapp" name="whatsapp" type="tel" value="<?php echo e(old('whatsapp')); ?>" autocomplete="tel" placeholder="08xxxxxxxxxx" required>
+                        <?php $__errorArgs = ['whatsapp'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="error"><?php echo e($message); ?></div>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
 
                     <button class="submit" type="submit">Submit</button>
@@ -482,7 +503,7 @@
         </button>
     </nav>
 
-    @if (session('success'))
+    <?php if(session('success')): ?>
         <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
             <div class="success-modal">
                 <div class="success-modal-icon" aria-hidden="true">
@@ -491,11 +512,11 @@
                     </svg>
                 </div>
                 <h4 id="successTitle">Data berhasil dikirim</h4>
-                <p>{{ session('success') }}</p>
+                <p><?php echo e(session('success')); ?></p>
                 <button type="button" class="modal-close" id="closeSuccessModal">OK</button>
             </div>
         </div>
-    @endif
+    <?php endif; ?>
 
     <script>
         const scrollToggle = document.getElementById('scrollToggle');
@@ -542,3 +563,4 @@
     </script>
 </body>
 </html>
+<?php /**PATH C:\Albert\kmm\KMM-microsite\resources\views/welcome.blade.php ENDPATH**/ ?>
