@@ -85,8 +85,8 @@
         }
 
         .logo {
-            width: min(118px, 34vw);
-            height: 58px;
+            width: min(142px, 41vw);
+            height: 70px;
             object-fit: contain;
         }
 
@@ -381,8 +381,8 @@
             }
 
             .logo {
-                width: 108px;
-                height: 52px;
+                width: 130px;
+                height: 62px;
             }
 
             .content {
@@ -412,7 +412,7 @@
 
         <section class="content">
             <div class="banner-wrap">
-                <img class="banner" src="{{ asset('img/banner.png') }}" alt="Banner Fire Bro">
+                <img class="banner" src="{{ asset('img/banner2.png') }}" alt="Banner Fire Bro">
             </div>
 
             <div class="copy">
