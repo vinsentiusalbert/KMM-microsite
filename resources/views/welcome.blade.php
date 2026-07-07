@@ -98,7 +98,7 @@
 
         .banner-wrap {
             overflow: hidden;
-            border-radius: 6px;
+            border-radius: 0 0 6px 6px;
             background: var(--white);
             border: 1px solid rgba(52, 32, 127, .18);
             box-shadow: 0 14px 30px rgba(9, 5, 33, .26);
@@ -153,64 +153,51 @@
 
         .event-info {
             margin-top: 18px;
-            padding: 18px;
+            padding: 18px 18px 16px;
             border-radius: 18px;
             background:
                 linear-gradient(180deg, rgba(251, 249, 255, .98) 0%, rgba(241, 236, 253, .96) 100%);
             border: 1px solid rgba(52, 32, 127, .12);
             box-shadow: 0 14px 30px rgba(24, 15, 77, .1);
             text-align: left;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .event-info::before {
-            content: "";
-            position: absolute;
-            inset: 0 auto 0 0;
-            width: 6px;
-            background: linear-gradient(180deg, #5b36d6 0%, var(--purple) 100%);
         }
 
         .event-info-title {
-            margin: 0 0 14px;
-            padding-left: 14px;
+            margin: 0 0 2px;
             font-size: 12px;
             line-height: 1.3;
             font-weight: 700;
             letter-spacing: .12em;
             text-transform: uppercase;
             color: #6f61a8;
+            text-align: center;
         }
 
         .event-info-list {
             display: grid;
-            gap: 12px;
+            gap: 10px;
+            padding-inline: 10px;
         }
 
         .event-info-item {
             display: grid;
-            grid-template-columns: 78px 1fr;
-            gap: 12px;
-            align-items: center;
-            padding: 10px 12px 10px 14px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, .72);
-            border: 1px solid rgba(52, 32, 127, .08);
+            justify-items: start;
+            gap: 4px;
+            padding: 4px 0;
         }
 
         .event-label {
             color: #7667ac;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: .04em;
+            letter-spacing: .14em;
             text-transform: uppercase;
         }
 
         .event-value {
             color: var(--purple-deep);
-            font-size: 15px;
-            line-height: 1.45;
+            font-size: 17px;
+            line-height: 1.35;
             font-weight: 600;
         }
 
@@ -381,6 +368,27 @@
         }
 
         @media (max-width: 430px) {
+            .page {
+                width: 100%;
+                padding: 0 0 34px;
+            }
+
+            .site-header {
+                min-height: 88px;
+                margin-bottom: 12px;
+                padding: 14px 16px;
+                border-radius: 0;
+            }
+
+            .logo {
+                width: 108px;
+                height: 52px;
+            }
+
+            .content {
+                margin-inline: 8px;
+            }
+
             body::before,
             body::after {
                 display: none;
@@ -389,7 +397,7 @@
 
         @media (min-width: 431px) {
             .event-info {
-                width: min(360px, 88%);
+                width: min(340px, 84%);
                 margin-inline: auto;
                 padding: 16px;
             }
