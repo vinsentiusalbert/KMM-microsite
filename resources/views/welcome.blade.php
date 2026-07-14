@@ -434,7 +434,7 @@
                             </div>
                             <div class="event-info-item">
                                 <span class="event-label">Tanggal</span>
-                                <span class="event-value">13 Juli 2026</span>
+                                <span class="event-value">16 Juli 2026</span>
                             </div>
                             <div class="event-info-item">
                                 <span class="event-label">Via</span>
