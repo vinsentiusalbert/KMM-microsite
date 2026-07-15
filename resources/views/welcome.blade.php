@@ -430,7 +430,7 @@
                             </div>
                             <div class="event-info-item">
                                 <span class="event-label">Hari</span>
-                                <span class="event-value">Senin</span>
+                                <span class="event-value">Kamis</span>
                             </div>
                             <div class="event-info-item">
                                 <span class="event-label">Tanggal</span>
